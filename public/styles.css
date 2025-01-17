@@ -1,0 +1,198 @@
+body {
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.window.chatbox {
+    height: 80%;
+    width: 80%;
+}
+
+.window.userlist {
+    display: none;
+}
+
+.window.chatbox .window-body {
+    height: inherit;
+}
+
+.window-body-bg-chatbox {
+    height: 100%;
+    background-color: rgba(84, 150, 226, 0.658);
+    display: flex;
+    flex-direction: column;
+    padding: 2px 2px;
+    box-shadow: 1px 1px;
+}
+
+.tree-view.chatbox {
+    height: 65%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 1.5px;
+}
+
+.input-menu {
+    display: none;
+}
+
+.text-settings {
+    display: none;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.window.userlist .window-body {
+    height: inherit;
+}
+
+.window-body-bg-userlist {
+    height: 60%;
+    margin: 40px 8px;
+    background-color: rgba(84, 150, 226, 0.658);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    box-shadow: 1px 1px;
+}
+
+.tree-view.userlist {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 3px 3px;
+    width: 100%;
+    border-radius: 1.5px;
+}
+
+.input-menu {
+    background-color: rgb(200, 223, 234);
+    padding: 2px 2px;
+    border-radius: 2px;
+    border-style: outset;
+    border-color: rgb(204, 226, 237);
+}
+
+.options-text-class {
+    border-style: inset;
+    border-width: 2px;
+    border-color: rgb(222, 222, 222);
+    border-radius: 2px;
+}
+
+#text21 {
+    border-radius: 2px;
+    border: rgb(113, 113, 113) 1px solid;
+}
+
+/*
+fix button sizes
+*/
+
+@media screen and (min-width: 400px) {
+    .input-menu {
+        margin: 1px 0;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .options-text-class {
+        width: 175px;
+    }
+
+    .text-settings {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .input-field {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    #text21 {
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        padding: 0 100px;
+    }
+
+
+    .window.userlist {
+        display: block;
+        height: 80%;
+        width: 30%;
+    }
+
+    .window.chatbox .title-bar .title-bar-controls {
+        display: none;
+    }
+
+    #text21 {
+        width: 450px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        padding: 0 120px;
+    }
+
+    #text21 {
+        width: 550px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    body {
+        padding: 0 150px;
+    }
+
+    .window.chatbox {
+        height: 80%;
+        width: 60%;
+    }
+
+    .window.userlist {
+        display: block;
+        height: 80%;
+        width: 25%;
+    }
+
+    #text21 {
+        width: 550px;
+    }
+}
+
+@media screen and (min-height: 250px) {
+    .tree-view.chatbox {
+        height: 80%;
+    }
+}
+
+@media screen and (min-height: 400px) {
+    .tree-view.chatbox {
+        height: 95%;
+    }
+}

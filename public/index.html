@@ -10,19 +10,69 @@
 </head>
 
 <body>
-    <div class="window" style="width: 300px">
+    <div class="window chatbox">
         <div class="title-bar">
             <div class="title-bar-text">Chat Room</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <button class="show-people-chatbox">-></button>
             </div>
         </div>
         <div class="window-body">
-            <p>There's so much room for activities!</p>
+            <div class="window-body-bg-chatbox">
+                <ul class="tree-view chatbox">
+                    <li>We can put</li>
+                    <li><strong style="color: purple">✨ Whatever ✨</strong></li>
+                    <li>We want in here</li>
+                    <li> HI</li>
+                </ul>
+
+                <div class="input-menu">
+                    <div class="text-class">
+                        <select class="options-text-class">
+                            <option>5 - Incredible!</option>
+                            <option>4 - Great!</option>
+                            <option>3 - Pretty good</option>
+                            <option>2 - Not so great</option>
+                            <option>1 - Unfortunate</option>
+                        </select>
+                    </div>
+
+                    <div class="text-settings">
+                        <button class="bold" style="width: 10px;">B</button>
+                        <button class="italic">I</button>
+                        <button class="underline">U</button>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <div class="field-row msg">
+                        <input id="text21" type="text" />
+                    </div>
+
+                    <button class="submit-msg">Click me</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="window userlist">
+        <div class="title-bar">
+            <div class="title-bar-text">People</div>
+            <div class="title-bar-controls">
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="window-body-bg-userlist">
+                <ul class="tree-view userlist">
+                    <li>We can put</li>
+                    <li><strong style="color: purple">✨ Whatever ✨</strong></li>
+                    <li>We want in here</li>
+                    <li> HI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
