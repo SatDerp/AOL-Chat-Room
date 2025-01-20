@@ -1,15 +1,29 @@
 import http from "http";
 import fs from "fs";
 import requestIp from "request-ip";
+import test from "./ratelimit.js";
 
 console.log("server created")
-const chatLogs = [];
 
-http.createServer((req, res) => {
+const logs = {
+    people: [],
+    chatLogs: []
+};
+
+console.log(new Date())
+http.createServer(async (req, res) => {
     const htmlpage = fs.readFileSync("public/index.html");
-    console.log(req.url)
+    console.log(req.url);
+    const clientIp = requestIp.getClientIp(req);
 
-    if (req.url == "/firstUser") {
+    if (req.url == "/ping") {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(logs));
+    } else if (req.url == "/PUT") {
+        if (!test(clientIp)) {
+            return;
+        }
+
         //build the whole request body
         let body = '';
         req.on('data', (chunk) => {
@@ -19,15 +33,12 @@ http.createServer((req, res) => {
         //when all data is received them parse the JSON
         req.on('end', () => {
             let obj = JSON.parse(body);
-            chatLogs.push(`${obj.name}: ${obj.message}`);
-            console.log(chatLogs);
+            logs.people.push(obj.name);
+            logs.people = [...new Set([...logs.people])];
+            logs.chatLogs.push(obj);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(logs));
         });
-
-        const dataSendBack = {
-
-        }
-        // res.writeHead(200, { 'Content-Type': });
-
     } else if (req.url == "/styles.css") {
         const csspage = fs.readFileSync("public/styles.css");
         res.writeHead(200, { 'Content-Type': 'text/css' });

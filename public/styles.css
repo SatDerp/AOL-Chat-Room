@@ -19,6 +19,8 @@ body {
 }
 
 .chatroom {
+    min-width: 575px;
+    min-height: 350px;
     height: inherit;
     display: none;
     flex-direction: row;
@@ -66,11 +68,6 @@ body {
 .input-field {
     display: flex;
     flex-direction: row;
-}
-
-button {
-    display: inline-block;
-    cursor: pointer;
 }
 
 .window.userlist .window-body {
@@ -153,14 +150,13 @@ fix button sizes
         padding: 0 100px;
     }
 
-
     .window.userlist {
         display: block;
         height: 80%;
         width: 30%;
     }
 
-    .window.chatbox .title-bar .title-bar-controls {
+    .show-chatbox {
         display: none;
     }
 
@@ -210,4 +206,16 @@ fix button sizes
     .tree-view.chatbox {
         height: 95%;
     }
+}
+
+.times {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.courier {
+    font-family: "Courier Prime", serif;
+    font-weight: 400;
+    font-style: normal;
 }

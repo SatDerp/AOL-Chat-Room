@@ -7,6 +7,14 @@
     <title>AOL</title>
     <link rel="stylesheet" href="https://unpkg.com/xp.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <script src="app.js" type="module"></script>
 </head>
 
@@ -26,34 +34,27 @@
     </div>
 
     <div class="chatroom" id="chatroom">
-        <div class="window chatbox">
+        <div class="window chatbox" id="window-chatbox">
             <div class="title-bar">
                 <div class="title-bar-text">Chat Room</div>
                 <div class="title-bar-controls">
-                    <button class="show-people-chatbox">-></button>
                 </div>
             </div>
             <div class="window-body">
                 <div class="window-body-bg-chatbox">
-                    <ul class="tree-view chatbox">
-                        <li>We can put</li>
-                        <li><strong style="color: purple">✨ Whatever ✨</strong></li>
-                        <li>We want in here</li>
+                    <ul class="tree-view chatbox" id="chatbox-list">
                     </ul>
 
                     <div class="input-menu">
                         <div class="text-class">
-                            <select class="options-text-class">
-                                <option>5 - Incredible!</option>
-                                <option>4 - Great!</option>
-                                <option>3 - Pretty good</option>
-                                <option>2 - Not so great</option>
-                                <option>1 - Unfortunate</option>
+                            <select class="options-text-class" id="font-option">
+                                <option class="times">Times New Roman</option>
+                                <option class="courier">Courier New</option>
                             </select>
                         </div>
 
                         <div class="text-settings">
-                            <button class="bold" style="width: 10px;">B</button>
+                            <button class="bold" style="padding: 5px; width: 10px;">B</button>
                             <button class="italic">I</button>
                             <button class="underline">U</button>
                         </div>
@@ -64,13 +65,13 @@
                             <input id="text21" type="text" />
                         </div>
 
-                        <button class="submit-msg">Click me</button>
+                        <button class="submit-msg" id="enter-msg">Enter</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="window userlist">
+        <div class="window userlist" id="window-people-list">
             <div class="title-bar">
                 <div class="title-bar-text">People</div>
                 <div class="title-bar-controls">
@@ -78,7 +79,7 @@
             </div>
             <div class="window-body">
                 <div class="window-body-bg-userlist">
-                    <ul class="tree-view userlist">
+                    <ul class="tree-view userlist" id="list-ppl-userlist">
                         <li>We can put</li>
                         <li><strong style="color: purple">✨ Whatever ✨</strong></li>
                         <li>We want in here</li>
